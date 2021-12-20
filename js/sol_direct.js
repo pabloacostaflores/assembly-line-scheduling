@@ -44,28 +44,26 @@ function guardar_data()
     let x=0;
     for(var i=0;i<cant_nods;i++)
     {
-        let s = document.getElementById("id--input--"+i);
+        var s = document.getElementById("id--input--"+i).value;
+        console.log(s);
+        if(s=="")
+        {
+            window.alert("los valores no pueden estar vacios");
+            return;
+        }
         if(s<0)
         {
-            console.log("penede burrop");
             window.alert("los valores no pueden ser menor a 0");
             return;
         }    
     }    
     for(var i=0;i<cant_nods/2;i++)
-        linea1[i]=document.getElementById("id--input--"+i);
+        linea1[i]=document.getElementById("id--input--"+i).value;
     for(var i=cant_nods/2;i<cant_nods;i++)
      {  
-         linea2[x]=document.getElementById("id--input--"+i);   
+         linea2[x]=document.getElementById("id--input--"+i).value;   
         x++;
     }     
-     console.log(linea1.length);
-     console.log(linea2.length);
-     for(let x=0;x<cant_nods/2;x++)
-     {
-         console.log(linea1[x],x);
-         console.log(linea2[x],x);
-     }
 }
 function borrar_datos()
 {
@@ -74,9 +72,15 @@ function borrar_datos()
         let s = document.getElementById("id--input--"+i);
         s.value = -1;
     }       
+}
+
+function generar_nodos()
+{
+
     
 }
-function crear_tabla(){
+
+/*function crear_tabla(){
     var col = document.getElementById("cols").value;
     var filas = document.getElementById("rows").value;
     var tabla="<table border=\"0\">";
@@ -98,7 +102,7 @@ function crear_tabla(){
     tabla+="</table>";
     document.getElementById("resultado").innerHTML=tabla;
 }
-
+*/
 function agregar_fila()
 {
 
