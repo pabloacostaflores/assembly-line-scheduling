@@ -1,4 +1,3 @@
-//document.write("hola a todos");
 let linea1 = [];
 let linea2 = [];
 let cant_nods=0;
@@ -75,31 +74,4 @@ function borrar_datos()
         s.value = -1;
     }       
     
-}
-function crear_tabla(){
-    var col = document.getElementById("cols").value;
-    var filas = document.getElementById("rows").value;
-    var tabla="<table border=\"0\">";
-    
-    tabla+="<tr><td></td>";
-    for(j=0;j<col;j++){ 
-        tabla+="<td>"+(j+1)+ "</td>";
-    }
-    tabla+="</tr>";
-    
-    for(i=0;i<filas;i++){
-        tabla+="<tr>";
-        tabla+="<td>"+(i+1)+ "</td>";
-        for(j=0;j<col;j++){ 
-            tabla+="<td>"+"<input type=\"text\" size=\"1\">"+ "</td>";
-        }
-        tabla+="</tr>";
-    }
-    tabla+="</table>";
-    document.getElementById("resultado").innerHTML=tabla;
-}
-
-function agregar_fila()
-{
-
 }

@@ -32,7 +32,7 @@
                         <a class="nav-link" href="sol_directa_nodos.html">Solución Directa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sol_dp.html">Solución DP</a>
+                        <a class="nav-link" href="Sol_DP.html">Solución DP</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
         </form>
     </div>
 -->
-    <div class="form-div-2" id="container">
+    <div class="form-div-2" id="container1">
         <h3>Formulario de control</h3>
         <p>Cantidad de nodos</p>
         <select id="cant--nodos" onchange="set_input()">
@@ -72,11 +72,13 @@
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
-        <script type="text/javascript" src="../js/sol_direct.js"></script>
+        <div id="container"></div>
         <p>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Borrar">
+            <input type="submit" value="Generar nodos" onclick="guardar_data()">
+            <input type="reset" value="Borrar" onclick="borrar_datos()">
         </p>
+        <script type="text/javascript" src="../js/sol_direct.js"></script>
+        
     </div>
 
     <div class="anime-div">
