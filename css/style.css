@@ -1,0 +1,27 @@
+body { 
+    font: 14px helvetica neue, helvetica, arial, sans-serif;
+  }
+  
+  #cy {
+    height: 90%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #aux1{
+    background-color: white;
+  }
+
+  #aux2{
+    background-color: white;
+  }
+
+  #aux3{
+    background-color: white;
+  }
+
+  #aux4{
+    background-color: white;
+  }

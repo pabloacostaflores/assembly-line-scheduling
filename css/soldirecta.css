@@ -1,0 +1,22 @@
+.form-div{
+    border: 5px solid aquamarine;
+    background-color: aquamarine;
+    width: 40%;
+}
+.form-div-2{
+    border: 5px solid yellow;
+    background-color: yellow;
+    width: 40%;
+}
+
+.anime-div{
+    background-color: coral;
+    border: 5px solid coral;
+    width: 40%;
+}
+
+.result-div{
+    background-color: darkgreen;
+    border: 5px solid darkgreen;
+    width: 40%;
+}

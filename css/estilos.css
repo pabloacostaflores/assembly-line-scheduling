@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+h1{
+    color: black;
+    text-align: center;
+    font-family:'Bold 700';
+    text-transform:uppercase;
+}
+/*
+#001b48
+#02457A
+#018ABE
+#97CADB
+#D6EBEE
+*/
+
+p,li,h5{
+  color: black;
+  text-align: justify;
+  font-family:'Quicksand:Bold';
+}
+/*.circle{
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: green;
+  /*background: #5cb85c;
+}*/
+
+
+
+svg {
+  width: 100%;
+  height: 400px;
+}
+
+button {
+  background: orange;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Lato';
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  background: blue;
+}
+
+.blue {
+  background-color: blue;
+  fill: blue;
+  stroke:red;
+  stroke-width:10;
+}
+
+#anime-demo {
+  text-align: center;
+}
+
+
+.Estacion{
+  pointer-events: none;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: green;
+  margin: 4px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.circle {
+  pointer-events: none;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  margin: 4px;
+  display: inline-block;
+}
+
+.circulo {
+  pointer-events: none;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: purple;
+  margin: 4px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.controls {
+  margin-top: 0px;
+}
+
+#resultado {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+#resultado.ok {
+  background-color: green;
+}
+
+
+
