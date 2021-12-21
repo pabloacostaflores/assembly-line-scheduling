@@ -1,7 +1,7 @@
 //document.write("hola a todos");
 let linea1 = [];
 let linea2 = [];
-let cant_nods=0;
+let cant_nods = 0;
 
 function set_input(){     
     const sb = document.querySelector('#cant--nodos');
