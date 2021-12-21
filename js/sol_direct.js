@@ -2,6 +2,7 @@
 let linea1 = [];
 let linea2 = [];
 let cant_nods=0;
+
 function set_input(){     
     const sb = document.querySelector('#cant--nodos');
    while (container.hasChildNodes()) {    
@@ -65,6 +66,9 @@ function guardar_data()
         x++;
     }     
 }
+
+
+
 function borrar_datos()
 {
     for(var i=0;i<cant_nods;i++)
@@ -107,3 +111,41 @@ function agregar_fila()
 {
 
 }
+
+
+        (function() { 
+            easyTabs();
+        })();
+    var a = [ [linea1[0],linea1[1],linea1[2],linea1[3]], [linea2[4],linea2[5],linea2[6],linea2[7]] ];
+    var t = [ [0,0,0,0], [0,0,0,0] ];
+    var e = [ [0,0,0,0], [0,0,0,0] ];
+
+    function anadir_inputs(){
+        linea1 = document.getElementById("frameLinea1").value
+        linea2 = document.getElementById("frameLinea2").value
+        cantNodos = document.getElementById("eleccionNodos").value
+        a[0][0] = document.getElementById("id--input--0").value
+        a[0][1] = document.getElementById("id--input--1").value
+        a[0][2] = document.getElementById("id--input--2").value
+        a[0][3] = document.getElementById("id--input--3").value
+        a[0][4] = document.getElementById("id--input--4").value
+        a[1][0] = document.getElementById("id--input--5").value
+        a[1][1] = document.getElementById("id--input--6").value
+        a[1][2] = document.getElementById("id--input--7").value
+        a[1][3] = document.getElementById("id--input--8").value
+        a[1][4] = document.getElementById("id--input--9").value
+        
+        if (cantNodos == 3){
+            linea1.setAttribute("src", "Nodos_L1_3N.html");
+            linea2.setAttribute("src", "Nodos_L1_3N.html");
+        }
+        else if (cantNodos == 4){
+            linea1.setAttribute("src", "Nodos_L1_4N.html");
+            linea2.setAttribute("src", "Nodos_L1_4N.html");
+        }
+        else if (cantNodos == 5){
+            linea1.setAttribute("src", "Nodos_L1_5N.html");
+            linea2.setAttribute("src", "Nodos_L1_5N.html");
+        }
+        location.reload();
+    }

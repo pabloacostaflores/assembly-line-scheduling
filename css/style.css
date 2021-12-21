@@ -1,9 +1,13 @@
-body { 
-    font: 14px helvetica neue, helvetica, arial, sans-serif;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+*{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
   
   #cy {
-    height: 90%;
+    height: 100%;
     width: 100%;
     position: absolute;
     left: 0;
