@@ -14,9 +14,16 @@
     <script src="anime.min.js"></script>
     <script src="./js/Prueba.js"></script>
     <script src="./Nodos_C.html"></script>
+    
+    <script src="./JS/scripts.js"></script>
+   <!-- 
+       <script src="./JS/sol_direct.js"></script>
+       <script src="./JS/scripts.js"></script>
+    -->
+
 </head>
 
-<body style="background-color:#02457A;">
+<body style="background-color:#018abe;">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#001b48;">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">Inicio</a>
@@ -38,6 +45,17 @@
 
     </br></br>
 
+    <div class="container-sm">
+        <p>
+            La solución mediante programación dinámica (DP) consiste en calcular la ruta óptima para cada estación 
+            (nodo) considerando su nodo anterior, tanto de la misma línea como de la otra línea. Por ende, al 
+            seleccionar una estación, realmente selecciona toda la ruta óptima seleccionada previamente por el nodo 
+            analizado. Al final se asegura que se calculó la ruta óptima para cada estación de las dos diferentes líneas, 
+            por ende, el costo menos de pasar por la estación estará determinado por la estación final con menor costo sumado 
+            al costo de salida.
+        </p>
+    </div>
+
     <div class="container-sm form-div-2" id="container1">
         <h3>Formulario de control</h3>
         <h5>Cantidad de nodos</h5>
@@ -46,16 +64,16 @@
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
+            <option value="5">5</option>
         </select>
         </br>
-        
-            <div id="container"></div>
+            <div class="Columnas" id="container"></div>
         </br>
         <p>
             <input class="Botones" type="submit" value="Generar nodos" onclick="guardar_data()">
             <input class="Botones" type="reset" value="Borrar" onclick="borrar_datos()">
         </p>
-        <script type="text/javascript" src="../js/sol_direct.js"></script>
+       
     </div>
 
     </br></br>
@@ -70,7 +88,7 @@
                 </br>
                 <div class="container-sm cont_frame">
                     <center>
-                        <iframe id = "frameLinea1" class="container-sm"src="Nodos_C.html"
+                        <iframe id = "frameLinea1" class="container-sm"src="Nodos_DP_L1.html"
                             style="border:5px dashed #001b48"
                             allowfullscreen
                             frameborder="0"
@@ -83,7 +101,7 @@
                 </br>
                 <div class="container-sm cont_frame">
                     <center>
-                        <iframe id = "frameLinea2" class="container-sm" src="Nodos_C.html"
+                        <iframe id = "frameLinea2" class="container-sm" src="Nodos_DP.html"
                             style="border:5px dashed #001b48"
                             allowfullscreen
                             frameborder="0"
@@ -94,6 +112,13 @@
             </li>
         </ul>
     </div>
+
+    </br></br>
+
+    <div class="container-sm result-div" id="result_div">
+        <script src="./JS/sol_directa.js"></script>
+    </div>
+
 
     <script>
         (function() { 
@@ -133,6 +158,34 @@
     }
     </script>
 
-    
+<div class="tabla-nodin" id="tabla-nodin">
+    <center>
+    <table>
+        <thead>
+            <tr>
+                <th>Nodo1</th>
+                <th>Nodo2</th>
+                <th>Nodo3</th>
+                <th>Nodo4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>dato 1 </td>
+                <td>dato 2 </td>
+                <td>dato 3 </td>
+                <td>daot 4 </td>
+            </tr>
+
+            <tr>
+                <td>dato 1 </td>
+                <td>dato 2 </td>
+                <td>dato 3 </td>
+                <td>daot 4 </td>
+            </tr>
+        </tbody>
+    </table>
+</center>
+</div>
 </body>
 </html>

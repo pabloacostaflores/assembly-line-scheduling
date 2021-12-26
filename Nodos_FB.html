@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- This code is for demonstration purposes only.  You should not hotlink to Github, Rawgit, or files from the Cytoscape.js documentation in your production apps. -->
+<html>
+<head>
+<link href="./CSS/estilos.css" rel="stylesheet"/> 
+<link href="./CSS/style.css" rel="stylesheet" />
+<meta charset=utf-8 />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+<title>Compound nodes</title>
+<script src="./cytoscape.js-unstable/documentation/js/cytoscape.min.js"></script>
+</head>
+<body>
+
+<div class="container-sm " style="display: flex;">
+    <div class="animacionA">
+        <div class="animaciónB" id="cy"></div>
+    </div> 
+    
+    <div class="div_contador">
+        <h4 class="contador" id="Contador"></h4>
+    </div>
+</div>
+
+
+<!-- Load application code at the end to ensure DOM is loaded -->
+<script src="./JS/prueba.js"></script>
+<script src="./Sol_Directa.html"></script>
+<!--<script src="LineasProduccionDP.js"></script>-->
+
+<script>
+//CREACION DE LAS MATRICES
+let numeros = new Array(4)
+
+for (let i = 0; i < 16; i++) {
+    numeros[i] = new Array(4)
+    for (let j = 0; j < 4; j++) {
+        numeros[i][j] = 0;
+    }
+}
+
+var fila = 0;
+var columna = 0;
+var empiezaUno = 0;
+var empiezaDos = 1;
+var contador = 0;
+//a[0][0] = nodo a
+//a[0][1] = nodo b
+//a[0][2] = nodo c
+//...
+//a[1][0] = nodo f
+var NUM_STATION = 4;
+var a = [ [ 4, 5, 3, 2 ], [ 2, 10, 1, 4 ] ]; //Valores nodos
+var t = [ [ 0, 7, 4, 5 ], [ 0, 9, 2, 8 ] ]; //Valores de las flechas de intercambio
+var e = [ 10, 12 ], x = [ 18, 7 ]; //Entrada y salida
+//Se realiza el algoritmo
+//var a = [ [0,0,0,0], [0,0,0,0] ];
+//var t = [ [0,0,0,0], [0,0,0,0] ];
+//var e = [ [0,0,0,0], [0,0,0,0] ];
+
+//carAssembleTime(a, t, e, x);
+
+function combinaciones(){ //Se crea una matriz con las diferentes combinaciones
+    let x;
+    let rep = 1;
+    let salto = 2;
+    for (let i=3; i>= 0; i--){
+        for(let z=rep; z<16; z += salto){
+            for (let j=z, x=0; x<rep; j++, x++){
+                numeros[j][i] = 1;
+            }
+        }
+        salto *= 2;
+        rep *= 2;
+    }
+}
+
+combinaciones();
+
+function fuerzaBruta(){
+    let i, k = Math.pow(NUM_STATION,2), pos;
+    let primero, segundo;
+    let minimo1 = 2147483647;
+    let minimo2 = 2147483647;
+    let t1, t2;
+    for (i=0; i<k; i++){
+        t1 = 0;
+        t2 = 1;
+        primero = e[0] + a[0][0];
+        segundo = e[1] + a[1][0];
+        for(pos = 1; pos < NUM_STATION; pos++){
+            if (numeros[i][pos] == 0){
+                primero += a[t1][pos];
+                segundo += a[t2][pos];
+            }
+            else{
+                primero += t[t1][pos];
+                segundo += t[t2][pos];
+                if (t1 == 1){
+                    t1 = 0;
+                }
+                else{
+                    t1 = 1;
+                }
+                if (t2 == 1){
+                    t2 = 0;
+                }
+                else{
+                    t2 = 1;
+                }
+                primero += a[t1][pos];
+                segundo += a[t2][pos];
+            }
+        }
+        primero += x[t1];
+        segundo += x[t2];
+        if (primero < minimo1){
+            minimo1 = primero;
+        }
+        if (segundo < minimo2){
+            minimo2 = segundo;
+        }
+    }
+
+}
+
+cy.unbind('click');
+cy.bind('click', 'node, edge', function(event) {
+    if (fila >= Math.pow(2 , NUM_STATION)){
+        colorearTodos();
+    }
+    else if (columna > (NUM_STATION - 1)){
+        columna = 0;
+        fila += 1;
+        colorearTodos();
+        contador+=1;
+        document.getElementById("Contador").innerHTML="<h4 id='Contador'>"+contador+"</h4>";
+    }
+    else{
+        colorear();
+        columna += 1;
+    }
+});
+
+function colorear(){
+    var nodo1;
+    let primeraLinea = ['a', 'b', 'c', 'd', 'e'];
+    let segundaLinea = ['f', 'g', 'h', 'i', 'j'];
+    var dirNodo1;
+        //syncDelay(1000);
+    //dirNodo1 = '[id = "'+'a'+'"]';
+    //dirNodo2 = '[id = "'+'f'+'"]';
+    //cy.nodes(dirNodo1).style('background-color', 'red');
+    //cy.nodes(dirNodo2).style('background-color', 'blue');
+
+    if (numeros[fila][columna] == 1){
+        if (empiezaUno == 0){
+            empiezaUno = 1;
+        }
+        else{
+            empiezaUno = 0;
+        }
+    }
+    if (empiezaUno == 0){
+        nodo1 = primeraLinea[columna];
+    }
+    else{
+        nodo1 = segundaLinea[columna];
+    }
+    dirNodo1 = '[id = "'+nodo1+'"]';
+    //dirNodo2 = '[id = "'+nodo2+'"]';
+    cy.nodes(dirNodo1).style('background-color', 'red');
+    //cy.nodes(dirNodo2).style('background-color', 'blue');
+}
+function colorearTodos(){
+    let primeraLinea = ['a', 'b', 'c', 'd', 'e'];
+    let segundaLinea = ['f', 'g', 'h', 'i', 'j'];
+    var nodo1, nodo2, dirNodo1, dirNodo2;
+    for(var j=0; j<NUM_STATION;j++){
+        nodo1 = primeraLinea[j];
+        nodo2 = segundaLinea[j];
+        dirNodo1 = '[id = "'+nodo1+'"]';
+        dirNodo2 = '[id = "'+nodo2+'"]';
+        cy.nodes(dirNodo1).style('background-color', 'green');
+        cy.nodes(dirNodo2).style('background-color', 'green');
+    }
+
+}
+
+</script>
+</body>
+</html>

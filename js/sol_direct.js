@@ -1,7 +1,7 @@
 //document.write("hola a todos");
 let linea1 = [];
 let linea2 = [];
-let cant_nods = 0;
+let cant_nods=0;
 
 function set_input(){     
     const sb = document.querySelector('#cant--nodos');
@@ -25,12 +25,17 @@ function set_input(){
     {
         cant_nods=8;
     }
+    if(sb.value=="5")
+    {
+        cant_nods=10;
+    }
     for(var i=0;i<cant_nods;i++)
     {
         container.appendChild(document.createElement("br"));
         var label = document.createElement("label");
         label.for="id--input"+i;
         label.title="Valor nodo "+i;
+
         var input = document.createElement("input");
         input.type = "number";
         input.className = "input-din"; // set the CSS class
@@ -39,7 +44,20 @@ function set_input(){
         container.appendChild(input); 
         container.appendChild(document.createElement("br"));
     }
+
+    for(var i=0;i<cant_nods-2;i++)
+    {
+        container.appendChild(document.createElement("br"));
+        var CambioL = document.createElement("input");
+        CambioL.type = "number";
+        CambioL.className = "input-din"; // set the CSS class
+        CambioL.id= "id_CambioL_"+ i;
+        CambioL.placeholder="valor linea "+i;
+        container.appendChild(CambioL);
+        container.appendChild(document.createElement("br")); 
+    }
 }
+
 function guardar_data()
 {
     let x=0;
@@ -57,7 +75,24 @@ function guardar_data()
             window.alert("los valores no pueden ser menor a 0");
             return;
         }    
-    }    
+    }
+    
+    for(var i=0;i<cant_nods-2;i++)
+    {
+        var s = document.getElementById("id_CambioL_"+i).value;
+        console.log(s);
+        if(s=="")
+        {
+            window.alert("los valores no pueden estar vacios");
+            return;
+        }
+        if(s<0)
+        {
+            window.alert("los valores no pueden ser menor a 0");
+            return;
+        }    
+    }  
+
     for(var i=0;i<cant_nods/2;i++)
         linea1[i]=document.getElementById("id--input--"+i).value;
     for(var i=cant_nods/2;i<cant_nods;i++)
@@ -75,7 +110,13 @@ function borrar_datos()
     {
         let s = document.getElementById("id--input--"+i);
         s.value = -1;
-    }       
+    } 
+    
+    for(var i=0;i<cant_nods-2;i++)
+    {
+        let s = document.getElementById("id_CambioL_"+ i);
+        s.value = -1;
+    }  
 }
 
 function generar_nodos()

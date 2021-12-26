@@ -10,10 +10,21 @@ h1,h3{
     text-transform:uppercase;
 }
 
+h4{
+  font-size: 290%;
+
+}
+
+.div_contador{
+  margin-top: 40px;
+  margin-left: 190px;
+}
+
 p,li,h5{
   color: black;
   text-align: justify;
   font-family:'Quicksand:Bold';
+  font-size: 150%;
 }
 
 /*
@@ -85,7 +96,7 @@ iframe{
   cursor: pointer;
 }
 .t-tabs li:hover {
-  background-color: #018ABE;
+  background-color: #02457A;
   color: #d2d2d2;
 }
 .t-tabs li.selected {
@@ -95,14 +106,14 @@ iframe{
   font-size: x-large;
   text-align: center;
   cursor: default;
-  background: #02457A;
+  background: #018abe;
 }
 .t-contents {
   padding: 0 !important
 }
 .t-content {
   padding: 0 1em;
-  background-color: #02457A;
+  background-color: #018abe;
   box-sizing: border-box;
   float: left;
   width: 100%;
@@ -126,7 +137,7 @@ iframe{
 
 .form-div-2{
   border: 5px solid #001b48;
-  background-color: #02457A;
+  background-color: #018abe;
   border-style: dashed;
   width: 40%;
 }
@@ -148,7 +159,37 @@ iframe{
   width: 100%;
 }
 
+.input-din{
+  background-color: #D6EBEE;
+  color: #000000;
+  font-weight: bolder;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+.Columnas{
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr 3fr;
+}
 
+tabla{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th ,yd{
+  padding: 10 px 20 px;
+  border: 1px solid #000;
+}
+
+.tabla-nondin{
+  border-style:dotted;
+  position: absolute;
+}
+table{
+  width :100%;
+}
+th, td {
+  width: 25%;
+}
 
 /*
 width="900" height="500"

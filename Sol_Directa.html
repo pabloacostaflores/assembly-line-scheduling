@@ -13,8 +13,11 @@
         <script src="./JS/anime.min.js"></script>
         <script src="./JS/anime.es.js"></script>
         <script src="./js/Pruebas.js"></script>
+    <script src="./Nodos_C.html"></script>
+    
+    <script src="./JS/scripts.js"></script>
     </head>
-    <body style="background-color:#02457A;">
+    <body style="background-color:#018abe;">
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#001b48;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./index.html">Inicio</a>
@@ -34,10 +37,45 @@
             </div>
         </nav> 
         <br/>
+        <div>
+            <h1 id="Contador"></h1>
+        </div>
+
+        <div class="container-sm form-div-2" id="container1">
+            <h3>Formulario de control</h3>
+            <h5>Cantidad de nodos</h5>
+            <select id="cant--nodos" onchange="set_input()">
+                <option value="">Elija cantidad de nodos</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            </br>
+                <div class="Columnas" id="container"></div>
+            </br>
+            <p>
+                <input class="Botones" type="submit" value="Generar nodos" onclick="guardar_data()">
+                <input class="Botones" type="reset" value="Borrar" onclick="borrar_datos()">
+            </p>
+           
+        </div>
+
+        <div class="container-sm">
+            <p>
+                La solución mediante fuerza bruta consiste en probar todos y cada uno de los caminos posibles a 
+                través de las líneas de producción, obteniendo un costo final por cada recorrido, al final, 
+                después de recorrer los diferentes caminos se devuelve el valor menor de todos ellos.
+                <br>
+                A continuación se realizará el conteo de los caminos que pueden llegar a presentarse en una fábrica 
+                de automóviles donde se tienen varias lineas de montaje.
+            </p>
+        </div>
+
 
         <div class="container-sm cont_frame">
             <center>
-                <iframe class="container-sm"src="Nodos_C.html"
+                <iframe class="container-sm"src="Nodos_FB.html"
                     style="border:5px dashed #001b48"
                     allowfullscreen
                     frameborder="0"
@@ -47,5 +85,122 @@
         </div>
 
         <br/>
+        <div class="tabla-nodin" id="tabla-nodin">
+            <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nodo1</th>
+                        <th>Nodo2</th>
+                        <th>Nodo3</th>
+                        <th>Nodo4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 </td>
+                        <td>2 </td>
+                        <td>3 </td>
+                        <td>4 </td>
+                    </tr>
+        
+                    <tr>
+                        <td>5 </td>
+                        <td>6 </td>
+                        <td>7</td>
+                        <td>8 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+
+                    <tr>
+                        <td>dato 1 </td>
+                        <td>dato 2 </td>
+                        <td>dato 3 </td>
+                        <td>daot 4 </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </center>
+        </div>
     </body>
 </html>
